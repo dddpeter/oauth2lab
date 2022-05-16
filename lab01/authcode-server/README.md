@@ -7,7 +7,7 @@
 
 浏览器请求：
 
-http://localhost:8080/oauth/authorize?client_id=clientapp&redirect_uri=http://localhost:9001/callback&response_type=code&scope=read_userinfo
+http://localhost:8080/oauth/authorize?client_id=app&redirect_uri=http://localhost:9001/callback&response_type=code&scope=read_userinfo
 
 **注意：state参数暂忽略**
 
@@ -17,7 +17,7 @@ http://localhost:9001/callback?code=8uYpdo
 
 ### 2. 获取访问令牌
 
-curl -X POST --user clientapp:112233 http://localhost:8080/oauth/token -H
+curl -X POST --user app:user http://localhost:8080/oauth/token -H
 "content-type: application/x-www-form-urlencoded" -d
 "code=8uYpdo&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalh
 ost%3A9001%2Fcallback&scope=read_userinfo"

@@ -5,7 +5,7 @@
 
 ### 1. 获取访问令牌
 
-curl -X POST --user clientapp:112233 http://localhost:8080/oauth/token -H "accept: application/json" -H "content-type: application/x-www-form-urlencoded" -d "grant_type=password&username=bobo&password=xyz&scope=read_userinfo"
+curl -X POST --user app:user http://localhost:8080/oauth/token -H "accept: application/json" -H "content-type: application/x-www-form-urlencoded" -d "grant_type=password&username=oauth_admin&password=user&scope=read"
 
 响应案例：
 
@@ -14,13 +14,13 @@ curl -X POST --user clientapp:112233 http://localhost:8080/oauth/token -H "accep
     "access_token": "58a02fd5-87f5-44ff-bbdd-d429cf6a2f60",
     "token_type": "bearer",
     "expires_in": 43199,
-    "scope": "read_userinfo"
+    "scope": "read"
 }
 ```
 
 ### 2. 调用API
 
-curl -X GET http://localhost:8080/api/userinfo -H "authorization: Bearer 58a02fd5-87f5-44ff-bbdd-d429cf6a2f60"
+curl -X GET http://localhost:8081/api/userinfo -H "authorization: Bearer 58a02fd5-87f5-44ff-bbdd-d429cf6a2f60"
 
 案例响应：
 

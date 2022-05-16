@@ -17,7 +17,7 @@ public class OAuth2Server {
 
         public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
             clients.inMemory()
-                .withClient("clientapp").secret("112233")
+                .withClient("app").secret("user")
                 .scopes("read", "write")
                 .authorizedGrantTypes("authorization_code");
         }

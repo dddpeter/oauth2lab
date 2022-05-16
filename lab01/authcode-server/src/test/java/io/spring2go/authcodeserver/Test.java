@@ -1,5 +1,7 @@
 package io.spring2go.authcodeserver;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 /**
  * @author lijinde
  * @create 2022/5/16 11:31
@@ -52,6 +54,14 @@ public class Test {
         System.out.println(c);
         String d1 = ""+""+""+"";
         String d = "1"+"2"+"4"+"5";
+    }
+
+
+    @org.junit.Test
+     public void test(){
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        String password = bCryptPasswordEncoder.encode("user");
+        System.out.println(password);
     }
 
 }

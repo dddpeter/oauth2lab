@@ -28,8 +28,8 @@ public class OAuth2AuthorizationServer extends
     public void configure(ClientDetailsServiceConfigurer clients)
             throws Exception {
         clients.inMemory()
-            .withClient("clientapp")
-            .secret("112233")
+            .withClient("app")
+            .secret("user")
             // 密码模式
             .authorizedGrantTypes("password")
             .scopes("read_userinfo", "read_contacts");

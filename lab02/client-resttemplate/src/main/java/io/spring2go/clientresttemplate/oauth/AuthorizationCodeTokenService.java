@@ -25,7 +25,7 @@ public class AuthorizationCodeTokenService {
         String endpoint = "http://localhost:8080/oauth/authorize";
 
         Map<String, String> authParameters = new HashMap<>();
-        authParameters.put("client_id", "clientapp");
+        authParameters.put("client_id", "app");
         authParameters.put("response_type", "code");
         authParameters.put("redirect_uri",
                 getEncodedUrl("http://localhost:9001/callback"));
@@ -55,8 +55,8 @@ public class AuthorizationCodeTokenService {
 
     public OAuth2Token getToken(String authorizationCode) {
         RestTemplate rest = new RestTemplate();
-        String authBase64 = configuration.encodeCredentials("clientapp",
-                "112233");
+        String authBase64 = configuration.encodeCredentials("app",
+                "user");
 
         RequestEntity<MultiValueMap<String, String>> requestEntity = new RequestEntity<>(
             configuration.getBody(authorizationCode),

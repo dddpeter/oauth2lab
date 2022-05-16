@@ -16,8 +16,8 @@ public class OAuth2Configuration {
         AuthorizationCodeResourceDetails details =
             new AuthorizationCodeResourceDetails();
         details.setId("oauth2server");
-        details.setClientId("clientapp");
-        details.setClientSecret("112233");
+        details.setClientId("app");
+        details.setClientSecret("user");
         details.setUseCurrentUri(true);
         details.setUserAuthorizationUri("http://localhost:8080/oauth/authorize");
         details.setAccessTokenUri("http://localhost:8080/oauth/token");

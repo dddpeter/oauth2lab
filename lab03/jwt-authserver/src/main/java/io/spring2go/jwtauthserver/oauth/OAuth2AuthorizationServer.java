@@ -41,8 +41,8 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-            .withClient("clientapp")
-            .secret("112233")
+            .withClient("app")
+            .secret("user")
             .scopes("read_userinfo")
             .authorizedGrantTypes(
                 "password",

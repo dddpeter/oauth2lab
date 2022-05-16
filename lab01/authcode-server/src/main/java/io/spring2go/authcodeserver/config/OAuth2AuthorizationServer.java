@@ -28,9 +28,6 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
     private DataSource dataSource;
 
     @Resource
-    private PasswordEncoder passwordEncoder;
-
-    @Resource
     private TokenStore tokenStore;
 
     @Resource
@@ -48,7 +45,8 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
         return new JdbcApprovalStore(dataSource);
     }
 
-
+    @Resource
+    PasswordEncoder passwordEncoder;
 
     /**
      * 配置 token 节点的安全策略
@@ -61,6 +59,7 @@ public class OAuth2AuthorizationServer extends AuthorizationServerConfigurerAdap
         // 获取 token 的策略
         security.tokenKeyAccess("permitAll()");
         security.checkTokenAccess("permitAll()");
+        security.passwordEncoder(passwordEncoder);
     }
 
     /**

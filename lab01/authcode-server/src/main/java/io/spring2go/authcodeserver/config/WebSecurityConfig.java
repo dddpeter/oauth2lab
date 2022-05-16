@@ -21,6 +21,7 @@ import javax.annotation.Resource;
 
 /**
  * @author hqins
+ * @author hqins
  * @create 2022/5/14 14:54
  **/
 @Configuration

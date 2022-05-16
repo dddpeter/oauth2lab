@@ -5,8 +5,7 @@
 
 ### 1. 获取访问令牌
 
-curl -X POST "http://localhost:8080/oauth/token" --user clientdevops:789 -d
-"grant_type=client_credentials&scope=devops"
+curl -X POST "http://localhost:8080/oauth/token" --user app:user -d "grant_type=client_credentials&scope=read"
 
 响应案例：
 
@@ -15,13 +14,13 @@ curl -X POST "http://localhost:8080/oauth/token" --user clientdevops:789 -d
     "access_token": "776b162a-949e-4dcb-b16b-9985e8171dc0",
     "token_type": "bearer",
     "expires_in": 43188,
-    "scope": "devops"
+    "scope": "read"
 }
 ```
 
 ### 2. 调用API
 
-curl -X GET http://localhost:8080/api/userlist -H "authorization: Bearer 776b162a-949e-4dcb-b16b-9985e8171dc0"
+curl -X GET http://localhost:8081/api/userlist -H "authorization: Bearer 776b162a-949e-4dcb-b16b-9985e8171dc0"
 
 案例响应：
 

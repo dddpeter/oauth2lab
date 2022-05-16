@@ -19,12 +19,25 @@
 	</parent>
 
 	<repositories>
-	    <repository>
-	        <id>repository.spring.milestone</id>
-	        <name>Spring Milestone Repository</name>
-	        <url>http://repo.spring.io/milestone</url>
-	    </repository>
+		<repository>
+			<id>aliyun-public</id>
+			<url>https://maven.aliyun.com/repository/public </url>
+		</repository>
+		<repository>
+			<id>aliyun-spring</id>
+			<url>https://maven.aliyun.com/repository/spring </url>
+		</repository>
 	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>aliyun-public</id>
+			<url>https://maven.aliyun.com/repository/public </url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>aliyun-spring</id>
+			<url>https://maven.aliyun.com/repository/spring-plugin </url>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
